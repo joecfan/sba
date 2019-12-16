@@ -1,0 +1,18 @@
+host: 192.168.43.173
+server:
+  port: 7000
+spring:
+  application:
+    name: zuul-server
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${host}:8889/eureka
